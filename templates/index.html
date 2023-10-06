@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="main">
+{% if videos %}
+<ul id="videoList">
+{% for video in videos %}
+<li><a href="{{url_for('playVideo', id=video.id)}}"><h1>{{video.title}}</h1></a><br><p>{{video.description}}</p></li>
+{% endfor %}
+</ul>
+{% else %}
+<h1 id="noVideo">No videos yet</h1>
+{% endif %}
+</div>
+{% endblock %}
