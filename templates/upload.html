@@ -3,10 +3,10 @@
 {% block body %}
 <div class="main">
     <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="videoUpload" id="videoUpload">
+        <input type="file" name="videoUpload" id="videoUpload" accept="video/mp4">
         <input type="text" name="videoTitle" id="videoTitle" placeholder="Video Title (Within 100 letters)" autocomplete="off">
         <textarea name="videoDescription" id="videoDescription" cols="30" rows="10" placeholder="Enter Video Description (Within 5000 words)" maxlength="5000"></textarea>
-        <input type="submit" value="Post">
+        <input type="submit" value="Post" id="postBtn">
     </form>
 </div>
 {% endblock %}

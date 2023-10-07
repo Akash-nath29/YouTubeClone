@@ -62,11 +62,25 @@ form {
     box-shadow: 10px 10px 50px #000;
 }
 form input, textarea {
-    width: 90%;
+    width: 90vh;
     margin: 1vh 0;
     padding: 8px 20px;
     outline: none;
 }
+#videoUpload, #postBtn{
+    width: 90vh;
+}
+#postBtn {
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+#postBtn:hover {
+    background-color: #4169e1;
+    color: white;
+    border: 1px solid white;
+}
+
 form textarea {
     resize: none;
 }

@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_file
+from io import BytesIO
 from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -41,11 +42,13 @@ def upload():
         return redirect('/')
     return render_template('upload.html', videos=False)
 
-@app.route('/playVidep/<int:id>')
+@app.route('/playVideo/<int:id>')
 def playVideo(id):
     video = Videos.query.get(id)
     if video:
-        return render_template('play.html', video=video)
+        print(send_file(BytesIO(video.video), mimetype='video/mp4'))
+        return send_file(BytesIO(video.video), mimetype='video/mp4')
+        # return render_template('play.html', video=video)
     else:
         return "Video not found", 404
 

@@ -5,7 +5,7 @@
 {% if videos %}
 <ul id="videoList">
 {% for video in videos %}
-<li><a href="{{url_for('playVideo', id=video.id)}}"><h1>{{video.title}}</h1></a><br><p>{{video.description}}</p></li>
+<li style="margin: 2vh 0;"><a href="{{url_for('playVideo', id=video.id)}}"><h1>{{video.title}}</h1></a><br><p>{{video.description}}</p></li>
 {% endfor %}
 </ul>
 {% else %}

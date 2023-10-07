@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}{{video.title}}{% endblock %}
 {% block body %}
-<video src="{{video.video}}" type="video/mp4" autoplay></video>
+<video width="640" height="360" controls>
+    <source src="{{ url_for('playVideo', id=video.id) }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 <h1>{{video.title}}</h1>
 <p>{{video.description}}</p>
 
